@@ -14,10 +14,10 @@ interface DataMessage {
 class SocketHandler {
   private socket: WebSocket;
   private data: DataMessage[] = [];
-  getData() {
+  public getData(): DataMessage[] {
     return this.data;
   }
-  gotDataPackage(event: MessageEvent) {
+  private gotDataPackage(event: MessageEvent): void {
     console.log('sss');
     if (this.data.length > 1000) {
       this.data.shift();
@@ -36,7 +36,7 @@ class ChartHandler {
   private chartHandler: Chart;
   private socket: SocketHandler;
   private mac: string;
-  getChartOptions() {
+  private getChartOptions(): object {
     return {
       elements: {
         line: {
@@ -45,7 +45,7 @@ class ChartHandler {
       },
     };
   }
-  getChartData() {
+  private getChartData(): object {
     return {
       labels: new Array(100),
       datasets: [
@@ -56,7 +56,7 @@ class ChartHandler {
       ],
     };
   }
-  updateFromData() {
+  private updateFromData(): void {
     this.chartHandler.data.datasets[0].data = this.socket
       .getData()
       .filter(el => el.mac === this.mac)
@@ -64,7 +64,7 @@ class ChartHandler {
       .slice(0, 100);
     this.chartHandler.update();
   }
-  generateChart() {
+  private generateChart(): void {
     this.chartHandler = new Chart(this.el, {
       type: 'line',
       data: this.getChartData(),

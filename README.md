@@ -6,12 +6,12 @@ Demonstrates using websockets to get data and visualize it as charts.
 
 ```
 yarn install
-parcel index.html
+parcel src/index.html
 ```
 
 ## Prod
 
 ```
 yarn install
-parcel build index.html
+parcel build src/index.html
 ```

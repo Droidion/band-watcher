@@ -9,11 +9,12 @@ export default class SocketHandler {
   }
   private gotDataPackage(event: MessageEvent): void {
     const inputData = JSON.parse(event.data);
-    if (SocketHandler.measurements.length > 10000) {
+    if (SocketHandler.measurements.length > 500) {
       SocketHandler.measurements.shift();
     }
-    if (SocketHandler.macs.findIndex(el => el === inputData.mac) > -1)
+    if (SocketHandler.macs.findIndex(el => el === inputData.mac) > -1) {
       SocketHandler.measurements.push(inputData);
+    }
   }
   constructor(serverUrl: string, macs: string[]) {
     SocketHandler.macs = macs;

@@ -1,5 +1,6 @@
 import ChartHandler from './classes/ChartHandler';
 import SocketHandler from './classes/SocketHandler';
+import PulseIndicator from './classes/PulseIndicator';
 
 const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 
@@ -84,3 +85,6 @@ new ChartHandler(
   },
   '#b2485f'
 );
+
+new PulseIndicator('leftPulseIndicator', socket, macs[0]);
+new PulseIndicator('rightPulseIndicator', socket, macs[1);

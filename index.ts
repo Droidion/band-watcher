@@ -32,7 +32,7 @@ class SocketHandler {
 
 class ChartHandler {
   private elId: string;
-  private el: HTMLElement;
+  private el: HTMLCanvasElement;
   private chartHandler: Chart;
   private socket: SocketHandler;
   private mac: string;
@@ -74,7 +74,7 @@ class ChartHandler {
   constructor(elId: string, socket: SocketHandler, mac: string) {
     this.mac = mac;
     this.elId = elId;
-    this.el = document.getElementById(elId);
+    this.el = document.getElementById(elId) as HTMLCanvasElement;
     this.socket = socket;
     this.generateChart();
     setInterval(() => {

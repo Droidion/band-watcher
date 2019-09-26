@@ -28,11 +28,19 @@ export default class ChartHandler {
       ],
     };
   }
-  private updateFromData(): void {
+  private updateFromData(mapParams: {
+    parentParam: string;
+    childParam: string;
+  }): void {
+    console.log(
+      this.socket
+        .getData()
+        .filter(el => el.mac === this.mac && el[mapParams.parentParam]),
+    );
     this.chartHandler.data.datasets[0].data = this.socket
       .getData()
-      .filter(el => el.mac === this.mac)
-      .map(el => el.accelerometer.y)
+      .filter(el => el.mac === this.mac && el[mapParams.parentParam])
+      .map(el => el[mapParams.parentParam][mapParams.childParam])
       .slice(0, 100);
     this.chartHandler.update();
   }
@@ -43,14 +51,22 @@ export default class ChartHandler {
       options: this.getChartOptions(),
     });
   }
-  constructor(elId: string, socket: SocketHandler, mac: string) {
+  constructor(
+    elId: string,
+    socket: SocketHandler,
+    mac: string,
+    mapParams: {
+      parentParam: string;
+      childParam: string;
+    },
+  ) {
     this.mac = mac;
     this.elId = elId;
     this.el = document.getElementById(elId) as HTMLCanvasElement;
     this.socket = socket;
     this.generateChart();
     setInterval(() => {
-      this.updateFromData();
+      this.updateFromData(mapParams);
     }, 1000);
   }
 }

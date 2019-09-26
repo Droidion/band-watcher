@@ -1,6 +1,38 @@
 import ChartHandler from './classes/ChartHandler';
 import SocketHandler from './classes/SocketHandler';
 
-const socket = new SocketHandler('ws://realtime-api.mo.dbrain.io/ws');
-new ChartHandler('leftChart', socket, 'B0:6F:E0:73:A9:64');
-new ChartHandler('rightChart', socket, 'B0:6F:E0:15:9F:AE');
+const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
+
+const socket = new SocketHandler('ws://realtime-api.mo.dbrain.io/ws', macs);
+new ChartHandler('leftChartX', socket, macs[0], {
+  parentParam: 'accelerometer',
+  childParam: 'x',
+});
+new ChartHandler('leftChartY', socket, macs[0], {
+  parentParam: 'accelerometer',
+  childParam: 'y',
+});
+new ChartHandler('leftChartZ', socket, macs[0], {
+  parentParam: 'accelerometer',
+  childParam: 'z',
+});
+new ChartHandler('leftChartHeart', socket, macs[0], {
+  parentParam: 'heart_rate',
+  childParam: 'bmp',
+});
+new ChartHandler('rightChartX', socket, macs[1], {
+  parentParam: 'accelerometer',
+  childParam: 'x',
+});
+new ChartHandler('rightChartY', socket, macs[1], {
+  parentParam: 'accelerometer',
+  childParam: 'y',
+});
+new ChartHandler('rightChartZ', socket, macs[1], {
+  parentParam: 'accelerometer',
+  childParam: 'z',
+});
+new ChartHandler('rightChartHeart', socket, macs[1], {
+  parentParam: 'heart_rate',
+  childParam: 'bmp',
+});

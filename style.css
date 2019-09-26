@@ -64,3 +64,13 @@ body {
 .chart-right {
   background-color: #eeeeee;
 }
+
+.pulse-value {
+  color: #b2485f;
+  font-size: 40px;
+  line-height: 40px;
+  position: absolute;
+  left: -74px;
+  text-align: right;
+  top: calc(50% - 20px);
+}

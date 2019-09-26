@@ -49,11 +49,11 @@ body {
 }
 
 .label.first {
-  top: 24px;
+  top: 12px;
   left: -55px;
 }
 .label.second {
-  bottom: 24px;
+  bottom: 12px;
   right: -32px;
 }
 

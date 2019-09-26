@@ -33,14 +33,13 @@ export default class ChartHandler {
       },
     };
   }
-  private getChartData(): object {
+  private getChartData(chartColor: string): object {
     return {
       labels: new Array(100),
       datasets: [
         {
           fill: false,
-          backgroundColor: '#41608c',
-          borderColor: '#41608c',
+          borderColor: chartColor,
           borderWidth: 2,
           pointRadius: 0,
           label: this.mac,
@@ -60,10 +59,10 @@ export default class ChartHandler {
       .slice(-100);
     this.chartHandler.update();
   }
-  private generateChart(): void {
+  private generateChart(chartColor: string): void {
     this.chartHandler = new Chart(this.el, {
       type: 'line',
-      data: this.getChartData(),
+      data: this.getChartData(chartColor),
       options: this.getChartOptions(),
     });
   }
@@ -74,13 +73,14 @@ export default class ChartHandler {
     mapParams: {
       parentParam: string;
       childParam: string;
-    }
+    },
+    chartColor: string
   ) {
     this.mac = mac;
     this.elId = elId;
     this.el = document.getElementById(elId) as HTMLCanvasElement;
     this.socket = socket;
-    this.generateChart();
+    this.generateChart(chartColor);
     setInterval(() => {
       this.updateFromData(mapParams);
     }, 5000);

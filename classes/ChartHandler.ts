@@ -1,26 +1,12 @@
 import Chart from 'chart.js';
 
-import SocketHandler from './SocketHandler';
+import getDefaultChartData from '../libs/getDefaultChartData';
 import getDefaultChartOptions from '../libs/getDefaultChartOptions';
+import SocketHandler from './SocketHandler';
 
 export default class ChartHandler {
   private el: HTMLCanvasElement;
   private chartHandler: Chart;
-  private getChartData(chartColor: string): object {
-    return {
-      labels: new Array(100),
-      datasets: [
-        {
-          fill: false,
-          borderColor: chartColor,
-          borderWidth: 2,
-          pointRadius: 0,
-          label: this.mac,
-          data: [],
-        },
-      ],
-    };
-  }
   private updateFromData(mapParams: {
     parentParam: string;
     childParam: string;
@@ -35,7 +21,7 @@ export default class ChartHandler {
   private generateChart(chartColor: string): void {
     this.chartHandler = new Chart(this.el, {
       type: 'line',
-      data: this.getChartData(chartColor),
+      data: getDefaultChartData(chartColor),
       options: getDefaultChartOptions(),
     });
   }

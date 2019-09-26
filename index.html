@@ -1,45 +1,111 @@
-<html>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pulsar</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
 <body>
-  <div style="display: flex;">
-    <div>
-      <h2>X</h2>
-      <canvas width="400"
-              height="200"
-              id="leftChartX"></canvas>
-      <h2>Y</h2>
-      <canvas width="400"
-              height="200"
-              id="leftChartY"></canvas>
-      <h2>Z</h2>
-      <canvas width="400"
-              height="200"
-              id="leftChartZ"></canvas>
-      <h2>Heart</h2>
-      <canvas width="400"
-              height="200"
-              id="leftChartHeart"></canvas>
-    </div>
-    <div>
-      <h2>X</h2>
-      <canvas width="400"
-              height="200"
-              id="rightChartX"></canvas>
-      <h2>Y</h2>
-      <canvas width="400"
-              height="200"
-              id="rightChartY"></canvas>
-      <h2>Z</h2>
-      <canvas width="400"
-              height="200"
-              id="rightChartZ"></canvas>
-      <h2>Heart</h2>
-      <canvas width="400"
-              height="200"
-              id="rightChartHeart"></canvas>
-    </div>
-  </div>
-  <script src="./index.ts"></script>
-</body>
+<div class="main">
 
+    <div class="main-left">
+
+        <div class="cnt">
+
+            <div class="cnt-title">
+                Левая
+            </div>
+
+            <div class="chart">
+                <div class="label first">X</div>
+
+                <canvas width="400"
+                        height="200"
+                        id="leftChartX">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Y</div>
+                <canvas width="400"
+                        height="200"
+                        id="leftChartY">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Z</div>
+                <canvas width="400"
+                        height="200"
+                        id="leftChartZ">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">&#9829;</div>
+                <canvas width="400"
+                        height="200"
+                        id="leftChartHeart">
+                </canvas>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-right">
+
+        <div class="cnt">
+
+            <div class="cnt-title">
+                Правая
+            </div>
+
+            <div class="chart">
+                <div class="label first">X</div>
+                <canvas width="400"
+                        height="200"
+                        id="rightChartX">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Y</div>
+                <canvas width="400"
+                        height="200"
+                        id="rightChartY">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Z</div>
+                <canvas width="400"
+                        height="200"
+                        id="rightChartZ">
+                </canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">&#9829;</div>
+                <canvas width="400"
+                        height="200"
+                        id="rightChartHeart">
+                </canvas>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<script src="./index.ts"></script>
+</body>
 </html>

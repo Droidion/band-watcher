@@ -67,6 +67,6 @@ export default class ChartHandler {
     this.generateChart();
     setInterval(() => {
       this.updateFromData(mapParams);
-    }, 1000);
+    }, 5000);
   }
 }

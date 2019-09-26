@@ -87,4 +87,4 @@ new ChartHandler(
 );
 
 new PulseIndicator('leftPulseIndicator', socket, macs[0]);
-new PulseIndicator('rightPulseIndicator', socket, macs[1);
+new PulseIndicator('rightPulseIndicator', socket, macs[1]);

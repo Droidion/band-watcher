@@ -22,6 +22,10 @@ export default class ChartHandler {
       labels: new Array(100),
       datasets: [
         {
+          fill: false,
+          backgroundColor: '#41608c',
+          borderColor: '#41608c',
+          pointRadius: 0,
           label: this.mac,
           data: [],
         },

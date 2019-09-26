@@ -36,11 +36,6 @@ export default class ChartHandler {
     parentParam: string;
     childParam: string;
   }): void {
-    console.log(
-      this.socket
-        .getData()
-        .filter(el => el.mac === this.mac && el[mapParams.parentParam]),
-    );
     this.chartHandler.data.datasets[0].data = this.socket
       .getData()
       .filter(el => el.mac === this.mac && el[mapParams.parentParam])

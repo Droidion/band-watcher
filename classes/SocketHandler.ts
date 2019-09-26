@@ -9,7 +9,6 @@ export default class SocketHandler {
   }
   private gotDataPackage(event: MessageEvent): void {
     const inputData = JSON.parse(event.data);
-    console.log(inputData);
     if (SocketHandler.measurements.length > 10000) {
       SocketHandler.measurements.shift();
     }

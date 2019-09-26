@@ -17,6 +17,12 @@ export default class ChartHandler {
       animation: {
         duration: 0,
       },
+      layout: {
+        padding: {
+          top: 50,
+          bottom: 50,
+        },
+      },
       legend: {
         display: false,
       },

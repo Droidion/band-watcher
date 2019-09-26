@@ -57,10 +57,6 @@ body {
   right: -32px;
 }
 
-canvas {
-  height: 100px;
-}
-
 .chart-left {
   background-color: white;
 }

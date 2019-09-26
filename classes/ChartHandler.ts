@@ -10,8 +10,15 @@ export default class ChartHandler {
   private mac: string;
   private getChartOptions(): object {
     return {
+      scales: {
+        xAxes: [{ display: false }],
+        yAxes: [{ display: false }],
+      },
       animation: {
         duration: 0,
+      },
+      legend: {
+        display: false,
       },
       elements: {
         line: {
@@ -28,6 +35,7 @@ export default class ChartHandler {
           fill: false,
           backgroundColor: '#41608c',
           borderColor: '#41608c',
+          borderWidth: 2,
           pointRadius: 0,
           label: this.mac,
           data: [],

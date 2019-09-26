@@ -21,6 +21,6 @@ export default class PulseIndicator {
           .pop()
       );
       this.renderValue();
-    }, 1000);
+    }, 5000);
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "band-watcher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "chart.js": "^2.8.0"
+  }
+}

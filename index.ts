@@ -1,6 +1,6 @@
 import ChartHandler from './classes/ChartHandler';
-import SocketHandler from './classes/SocketHandler';
 import PulseIndicator from './classes/PulseIndicator';
+import SocketHandler from './classes/SocketHandler';
 
 const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 const chartColors = ['#2c6ab5', '#b2485f'];

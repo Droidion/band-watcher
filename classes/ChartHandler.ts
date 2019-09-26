@@ -1,38 +1,11 @@
 import Chart from 'chart.js';
 
 import SocketHandler from './SocketHandler';
+import getDefaultChartOptions from '../libs/getDefaultChartOptions';
 
 export default class ChartHandler {
-  private elId: string;
   private el: HTMLCanvasElement;
   private chartHandler: Chart;
-  private socket: SocketHandler;
-  private mac: string;
-  private getChartOptions(): object {
-    return {
-      scales: {
-        xAxes: [{ display: false }],
-        yAxes: [{ display: false }],
-      },
-      animation: {
-        duration: 0,
-      },
-      layout: {
-        padding: {
-          top: 50,
-          bottom: 50,
-        },
-      },
-      legend: {
-        display: false,
-      },
-      elements: {
-        line: {
-          tension: 0, // disables bezier curves
-        },
-      },
-    };
-  }
   private getChartData(chartColor: string): object {
     return {
       labels: new Array(100),
@@ -63,23 +36,20 @@ export default class ChartHandler {
     this.chartHandler = new Chart(this.el, {
       type: 'line',
       data: this.getChartData(chartColor),
-      options: this.getChartOptions(),
+      options: getDefaultChartOptions(),
     });
   }
   constructor(
     elId: string,
-    socket: SocketHandler,
-    mac: string,
+    private socket: SocketHandler,
+    private mac: string,
     mapParams: {
       parentParam: string;
       childParam: string;
     },
     chartColor: string
   ) {
-    this.mac = mac;
-    this.elId = elId;
     this.el = document.getElementById(elId) as HTMLCanvasElement;
-    this.socket = socket;
     this.generateChart(chartColor);
     setInterval(() => {
       this.updateFromData(mapParams);

@@ -5,19 +5,20 @@ import getDefaultChartOptions from '../libs/getDefaultChartOptions';
 import SocketHandler from './SocketHandler';
 
 export default class ChartHandler {
-  private el: HTMLCanvasElement;
   private chartHandler: Chart;
-  private updateFromData(mapParams: {
-    parentParam: string;
-    childParam: string;
-  }): void {
+  private el: HTMLCanvasElement;
+  private mac: string;
+  private readonly repeatMs: number = 5000;
+
+  private updateFromData(dataCategory: string, dataParam: string): void {
     this.chartHandler.data.datasets[0].data = this.socket
       .getData()
-      .filter(el => el.mac === this.mac && el[mapParams.parentParam])
-      .map(el => el[mapParams.parentParam][mapParams.childParam])
+      .filter(el => el.mac === this.mac && el[dataCategory])
+      .map(el => el[dataCategory][dataParam])
       .slice(-100);
     this.chartHandler.update();
   }
+
   private generateChart(chartColor: string): void {
     this.chartHandler = new Chart(this.el, {
       type: 'line',
@@ -25,20 +26,22 @@ export default class ChartHandler {
       options: getDefaultChartOptions(),
     });
   }
+
   constructor(
-    elId: string,
-    private socket: SocketHandler,
-    private mac: string,
-    mapParams: {
-      parentParam: string;
-      childParam: string;
+    params: {
+      elId: string;
+      mac: string;
+      chartColor: string;
+      dataCategory: string;
+      dataParam: string;
     },
-    chartColor: string
+    private socket: SocketHandler
   ) {
-    this.el = document.getElementById(elId) as HTMLCanvasElement;
-    this.generateChart(chartColor);
+    this.mac = params.mac;
+    this.el = document.getElementById(params.elId) as HTMLCanvasElement;
+    this.generateChart(params.chartColor);
     setInterval(() => {
-      this.updateFromData(mapParams);
-    }, 5000);
+      this.updateFromData(params.dataCategory, params.dataParam);
+    }, this.repeatMs);
   }
 }

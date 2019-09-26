@@ -2,90 +2,98 @@ import ChartHandler from './classes/ChartHandler';
 import PulseIndicator from './classes/PulseIndicator';
 import SocketHandler from './classes/SocketHandler';
 
-const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 const chartColors = ['#2c6ab5', '#b2485f'];
+const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 const socketAddress = 'ws://realtime-api.mo.dbrain.io/ws';
 
 const socket = new SocketHandler(socketAddress, macs);
+
 new ChartHandler(
-  'leftChartX',
-  socket,
-  macs[0],
   {
-    parentParam: 'accelerometer',
-    childParam: 'x',
+    elId: 'leftChartX',
+    mac: macs[0],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'x',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'leftChartY',
-  socket,
-  macs[0],
   {
-    parentParam: 'accelerometer',
-    childParam: 'y',
+    elId: 'leftChartY',
+    mac: macs[0],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'y',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'leftChartZ',
-  socket,
-  macs[0],
   {
-    parentParam: 'accelerometer',
-    childParam: 'z',
+    elId: 'leftChartZ',
+    mac: macs[0],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'z',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'leftChartHeart',
-  socket,
-  macs[0],
   {
-    parentParam: 'heart_rate',
-    childParam: 'bpm',
+    elId: 'leftChartHeart',
+    mac: macs[0],
+    chartColor: chartColors[1],
+    dataCategory: 'heart_rate',
+    dataParam: 'bpm',
   },
-  chartColors[1]
+  socket
 );
+
 new ChartHandler(
-  'rightChartX',
-  socket,
-  macs[1],
   {
-    parentParam: 'accelerometer',
-    childParam: 'x',
+    elId: 'rightChartX',
+    mac: macs[1],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'x',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'rightChartY',
-  socket,
-  macs[1],
   {
-    parentParam: 'accelerometer',
-    childParam: 'y',
+    elId: 'rightChartY',
+    mac: macs[1],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'y',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'rightChartZ',
-  socket,
-  macs[1],
   {
-    parentParam: 'accelerometer',
-    childParam: 'z',
+    elId: 'rightChartZ',
+    mac: macs[1],
+    chartColor: chartColors[0],
+    dataCategory: 'accelerometer',
+    dataParam: 'z',
   },
-  chartColors[0]
+  socket
 );
+
 new ChartHandler(
-  'rightChartHeart',
-  socket,
-  macs[1],
   {
-    parentParam: 'heart_rate',
-    childParam: 'bpm',
+    elId: 'rightChartHeart',
+    mac: macs[1],
+    chartColor: chartColors[1],
+    dataCategory: 'heart_rate',
+    dataParam: 'bpm',
   },
-  chartColors[1]
+  socket
 );
 
 new PulseIndicator('leftPulseIndicator', socket, macs[0]);

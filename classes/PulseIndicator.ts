@@ -1,14 +1,18 @@
 import SocketHandler from './SocketHandler';
 
 export default class PulseIndicator {
-  private value: number = 0;
   private el: HTMLElement;
-  public renderValue(): void {
+  private readonly repeatMs: number = 5000;
+  private value: number = 0;
+
+  private renderValue(): void {
     this.el.innerText = Math.round(this.value).toString();
   }
-  public setValue(value: number): void {
+
+  private setValue(value: number): void {
     this.value = value;
   }
+
   constructor(elId: string, socket: SocketHandler, mac: string) {
     this.el = document.getElementById(elId);
     setInterval(() => {
@@ -21,6 +25,6 @@ export default class PulseIndicator {
           .pop()
       );
       this.renderValue();
-    }, 5000);
+    }, this.repeatMs);
   }
 }

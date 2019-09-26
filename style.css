@@ -74,3 +74,54 @@ body {
   text-align: right;
   top: calc(50% - 20px);
 }
+
+.heart {
+  animation: heartbeat 1s infinite;
+  background-color: #aaaaaa;
+  display: inline-block;
+  height: 20px;
+  position: absolute;
+  margin: 20px 10px 0;
+  transform: rotate(-45deg);
+  left: 45%;
+  width: 20px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #aaaaaa;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 )
+    rotate(-45deg);
+  }
+  20%
+  {
+    transform: scale( 1.25 )
+    rotate(-45deg);
+  }
+  40%
+  {
+    transform: scale( 1.5 )
+    rotate(-45deg);
+  }
+}

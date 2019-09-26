@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Pulsar</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-left">
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<div class="main">
+    <div class="main-left">
         <div class="cnt">
-          <div class="cnt-title">
-            Левая
-          </div>
+            <div class="cnt-title">
+                Левая
+            </div>
 
-          <div class="chart">
-            <div class="label first">X</div>
+            <div class="chart">
+                <div class="label first">X</div>
 
-            <canvas class="chart-left" height="100" id="leftChartX"> </canvas>
-            <div class="label second">t</div>
-          </div>
+                <canvas class="chart-left" height="100" id="leftChartX"></canvas>
+                <div class="label second">t</div>
+            </div>
 
-          <div class="chart">
-            <div class="label first">Y</div>
-            <canvas class="chart-left" height="100" id="leftChartY"> </canvas>
-            <div class="label second">t</div>
-          </div>
+            <div class="chart">
+                <div class="label first">Y</div>
+                <canvas class="chart-left" height="100" id="leftChartY"></canvas>
+                <div class="label second">t</div>
+            </div>
 
-          <div class="chart">
-            <div class="label first">Z</div>
-            <canvas class="chart-left" height="100" id="leftChartZ"> </canvas>
-            <div class="label second">t</div>
-          </div>
+            <div class="chart">
+                <div class="label first">Z</div>
+                <canvas class="chart-left" height="100" id="leftChartZ"></canvas>
+                <div class="label second">t</div>
+            </div>
 
-          <div class="chart">
-            <div class="pulse-value">110</div>
-            <div class="label first">&#9829;</div>
-            <canvas class="chart-left" height="100" id="leftChartHeart">
-            </canvas>
-          </div>
+            <div class="chart">
+                <div class="pulse-value">110</div>
+                <div class="label first">
+                    <div class="heart"></div>
+                </div>
+                <canvas class="chart-left" height="100" id="leftChartHeart">
+                </canvas>
+            </div>
         </div>
-      </div>
-
-      <div class="main-right">
-        <div class="cnt">
-          <div class="cnt-title">
-            Правая
-          </div>
-
-          <div class="chart">
-            <div class="label first">X</div>
-            <canvas class="chart-right" height="100" id="rightChartX"> </canvas>
-            <div class="label second">t</div>
-          </div>
-
-          <div class="chart">
-            <div class="label first">Y</div>
-            <canvas class="chart-right" height="100" id="rightChartY"> </canvas>
-            <div class="label second">t</div>
-          </div>
-
-          <div class="chart">
-            <div class="label first">Z</div>
-            <canvas class="chart-right" height="100" id="rightChartZ"> </canvas>
-            <div class="label second">t</div>
-          </div>
-
-          <div class="chart">
-            <div class="pulse-value">110</div>
-            <div class="label first">&#9829;</div>
-            <canvas class="chart-right" height="100" id="rightChartHeart">
-            </canvas>
-          </div>
-        </div>
-      </div>
     </div>
-    <script src="./index.ts"></script>
-  </body>
+
+    <div class="main-right">
+        <div class="cnt">
+            <div class="cnt-title">
+                Правая
+            </div>
+
+            <div class="chart">
+                <div class="label first">X</div>
+                <canvas class="chart-right" height="100" id="rightChartX"></canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Y</div>
+                <canvas class="chart-right" height="100" id="rightChartY"></canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="label first">Z</div>
+                <canvas class="chart-right" height="100" id="rightChartZ"></canvas>
+                <div class="label second">t</div>
+            </div>
+
+            <div class="chart">
+                <div class="pulse-value">110</div>
+                <div class="label first">
+                    <div class="heart"></div>
+                </div>
+                <canvas class="chart-right" height="100" id="rightChartHeart">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./index.ts"></script>
+</body>
 </html>

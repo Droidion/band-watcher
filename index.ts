@@ -3,6 +3,7 @@ import SocketHandler from './classes/SocketHandler';
 import PulseIndicator from './classes/PulseIndicator';
 
 const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
+const chartColors = ['#2c6ab5', '#b2485f'];
 
 const socket = new SocketHandler('ws://realtime-api.mo.dbrain.io/ws', macs);
 new ChartHandler(
@@ -13,7 +14,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'x',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'leftChartY',
@@ -23,7 +24,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'y',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'leftChartZ',
@@ -33,7 +34,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'z',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'leftChartHeart',
@@ -43,7 +44,7 @@ new ChartHandler(
     parentParam: 'heart_rate',
     childParam: 'bpm',
   },
-  '#b2485f'
+  chartColors[1]
 );
 new ChartHandler(
   'rightChartX',
@@ -53,7 +54,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'x',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'rightChartY',
@@ -63,7 +64,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'y',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'rightChartZ',
@@ -73,7 +74,7 @@ new ChartHandler(
     parentParam: 'accelerometer',
     childParam: 'z',
   },
-  '#2c6ab5'
+  chartColors[0]
 );
 new ChartHandler(
   'rightChartHeart',
@@ -83,7 +84,7 @@ new ChartHandler(
     parentParam: 'heart_rate',
     childParam: 'bpm',
   },
-  '#b2485f'
+  chartColors[1]
 );
 
 new PulseIndicator('leftPulseIndicator', socket, macs[0]);

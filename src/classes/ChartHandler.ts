@@ -1,5 +1,6 @@
 import Chart from 'chart.js';
 
+import ConstructChartParams from '../interfaces/ConstructChartParams';
 import getDefaultChartData from '../libs/getDefaultChartData';
 import getDefaultChartOptions from '../libs/getDefaultChartOptions';
 import SocketHandler from './SocketHandler';
@@ -27,16 +28,7 @@ export default class ChartHandler {
     });
   }
 
-  constructor(
-    params: {
-      elId: string;
-      mac: string;
-      chartColor: string;
-      dataCategory: string;
-      dataParam: string;
-    },
-    private socket: SocketHandler
-  ) {
+  constructor(params: ConstructChartParams, private socket: SocketHandler) {
     this.mac = params.mac;
     this.el = document.getElementById(params.elId) as HTMLCanvasElement;
     this.generateChart(params.chartColor);

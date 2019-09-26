@@ -1,4 +1,4 @@
-const getDefaultChartData = (chartColor: string) => {
+const getDefaultChartData = (chartColor: string): Chart.ChartData => {
   return {
     labels: new Array(100),
     datasets: [

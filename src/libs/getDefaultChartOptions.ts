@@ -1,4 +1,4 @@
-const getDefaultChartOptions = () => {
+const getDefaultChartOptions = (): Chart.ChartOptions => {
   return {
     scales: {
       xAxes: [{ display: false }],

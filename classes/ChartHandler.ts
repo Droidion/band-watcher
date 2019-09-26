@@ -22,7 +22,7 @@ export default class ChartHandler {
       labels: new Array(100),
       datasets: [
         {
-          label: 'Test',
+          label: this.mac,
           data: [],
         },
       ],

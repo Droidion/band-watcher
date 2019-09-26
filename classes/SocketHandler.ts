@@ -2,18 +2,21 @@ import DataMessage from '../interfaces/DataMessage';
 
 export default class SocketHandler {
   private socket: WebSocket;
-  private data: DataMessage[] = [];
+  static measurements: DataMessage[] = [];
   public getData(): DataMessage[] {
-    return this.data;
+    return SocketHandler.measurements;
   }
   private gotDataPackage(event: MessageEvent): void {
-    console.log('sss');
-    if (this.data.length > 1000) {
-      this.data.shift();
+    const inputData = JSON.parse(event.data);
+    if (inputData.accelerometer) {
+      if (SocketHandler.measurements.length > 300) {
+        SocketHandler.measurements.shift();
+      }
+      SocketHandler.measurements.push(JSON.parse(event.data));
     }
-    this.data.push(event.data);
   }
   constructor(serverUrl: string) {
+    SocketHandler.measurements = [];
     this.socket = new WebSocket(serverUrl);
     this.socket.onmessage = this.gotDataPackage;
   }

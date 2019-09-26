@@ -10,6 +10,9 @@ export default class ChartHandler {
   private mac: string;
   private getChartOptions(): object {
     return {
+      animation: {
+        duration: 0,
+      },
       elements: {
         line: {
           tension: 0, // disables bezier curves
@@ -40,7 +43,7 @@ export default class ChartHandler {
       .getData()
       .filter(el => el.mac === this.mac && el[mapParams.parentParam])
       .map(el => el[mapParams.parentParam][mapParams.childParam])
-      .slice(0, 100);
+      .slice(-100);
     this.chartHandler.update();
   }
   private generateChart(): void {
@@ -57,7 +60,7 @@ export default class ChartHandler {
     mapParams: {
       parentParam: string;
       childParam: string;
-    },
+    }
   ) {
     this.mac = mac;
     this.elId = elId;

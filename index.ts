@@ -4,8 +4,9 @@ import PulseIndicator from './classes/PulseIndicator';
 
 const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 const chartColors = ['#2c6ab5', '#b2485f'];
+const socketAddress = 'ws://realtime-api.mo.dbrain.io/ws';
 
-const socket = new SocketHandler('ws://realtime-api.mo.dbrain.io/ws', macs);
+const socket = new SocketHandler(socketAddress, macs);
 new ChartHandler(
   'leftChartX',
   socket,

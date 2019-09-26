@@ -18,7 +18,7 @@ new ChartHandler('leftChartZ', socket, macs[0], {
 });
 new ChartHandler('leftChartHeart', socket, macs[0], {
   parentParam: 'heart_rate',
-  childParam: 'bmp',
+  childParam: 'bpm',
 });
 new ChartHandler('rightChartX', socket, macs[1], {
   parentParam: 'accelerometer',
@@ -34,5 +34,5 @@ new ChartHandler('rightChartZ', socket, macs[1], {
 });
 new ChartHandler('rightChartHeart', socket, macs[1], {
   parentParam: 'heart_rate',
-  childParam: 'bmp',
+  childParam: 'bpm',
 });

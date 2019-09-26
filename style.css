@@ -1,0 +1,51 @@
+body {
+    background: #E5E5E5;
+    font-family: 'TT Norms', sans-serif;
+}
+
+.main {
+    width: 1600px;
+    display: flex;
+    margin: 64px auto;
+}
+
+.main-left,
+.main-right {
+    width: 800px;
+}
+.main-left {
+    background: #DDDDDD;
+}
+
+.main-right {
+    background: #FAFAFA;
+}
+
+.cnt {
+    margin: 60px 74px 77px;
+}
+
+
+.cnt-title {
+    font-size: 60px;
+    line-height: 71px;
+}
+
+.chart {
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    font-size: 48px;
+    color: #AAAAAA;
+}
+
+.label.first {
+    top: 24px;
+    left: -40px;
+}
+.label.second {
+    bottom: 24px;
+    right: 0;
+}

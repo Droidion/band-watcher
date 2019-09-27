@@ -1,3 +1,4 @@
+// Message from socket
 export default interface DataMessage {
   mac: string;
   accelerometer?: {

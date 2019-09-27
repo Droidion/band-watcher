@@ -1,3 +1,4 @@
+// Chart input parameters when generating new chart
 export default interface ConstructChartParams {
   elId: string;
   mac: string;

@@ -1,3 +1,4 @@
+// Initialization data for Chart.js chart
 const getDefaultChartData = (chartColor: string): Chart.ChartData => {
   return {
     labels: new Array(100),

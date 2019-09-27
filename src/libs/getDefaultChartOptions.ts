@@ -1,3 +1,4 @@
+// Options object for Chart.js linear chart
 const getDefaultChartOptions = (): Chart.ChartOptions => {
   return {
     scales: {

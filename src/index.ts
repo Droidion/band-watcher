@@ -2,7 +2,10 @@ import ChartHandler from './classes/ChartHandler';
 import PulseIndicator from './classes/PulseIndicator';
 import SocketHandler from './classes/SocketHandler';
 
-const chartColors = ['#2c6ab5', '#b2485f'];
+enum ChartColors {
+  Basic = '#2c6ab5',
+  Accented = '#b2485f',
+}
 const macs = ['01:02:03:01:04:01', '01:02:02:03:02:03'];
 const socketAddress = 'ws://realtime-api.mo.dbrain.io/ws';
 
@@ -12,7 +15,7 @@ new ChartHandler(
   {
     elId: 'leftChartX',
     mac: macs[0],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'x',
   },
@@ -23,7 +26,7 @@ new ChartHandler(
   {
     elId: 'leftChartY',
     mac: macs[0],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'y',
   },
@@ -34,7 +37,7 @@ new ChartHandler(
   {
     elId: 'leftChartZ',
     mac: macs[0],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'z',
   },
@@ -45,7 +48,7 @@ new ChartHandler(
   {
     elId: 'leftChartHeart',
     mac: macs[0],
-    chartColor: chartColors[1],
+    chartColor: ChartColors.Accented,
     dataCategory: 'heart_rate',
     dataParam: 'bpm',
   },
@@ -56,7 +59,7 @@ new ChartHandler(
   {
     elId: 'rightChartX',
     mac: macs[1],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'x',
   },
@@ -67,7 +70,7 @@ new ChartHandler(
   {
     elId: 'rightChartY',
     mac: macs[1],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'y',
   },
@@ -78,7 +81,7 @@ new ChartHandler(
   {
     elId: 'rightChartZ',
     mac: macs[1],
-    chartColor: chartColors[0],
+    chartColor: ChartColors.Basic,
     dataCategory: 'accelerometer',
     dataParam: 'z',
   },
@@ -89,7 +92,7 @@ new ChartHandler(
   {
     elId: 'rightChartHeart',
     mac: macs[1],
-    chartColor: chartColors[1],
+    chartColor: ChartColors.Accented,
     dataCategory: 'heart_rate',
     dataParam: 'bpm',
   },
